@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/style.css">
+    <script src="js/script.js" defer></script>
+    <title>Task List</title>
+</head>
+
+<body>
+
+    <div class="hero-image">
+        <div class="hero-text">
+            <h1>Task Manager</h1><br>
+        </div>
+        <button id="heroButton" class="heroButton">Create New Task</button>
+    </div>
+
+    <dialog id="DialogTask" class="DialogTask">
+        <form>
+            <label for="title">Title:</label><br>
+            <input type="text" id="title" class="dialogTitle" name="title" maxlength="50" pattern="[a-zA-Z0-9]+"
+                required><br><br>
+            <label for="description">Description:</label><br>
+            <textarea id="description" class="dialogTextarea" name="description" maxlength="250"
+                required></textarea><br><br>
+            <label for="asignee">Email:</label><br>
+            <input type="email" class="dialogEmail" id="asignee" name="asignee" required><br><br>
+            <div class="flexContainer">
+                <button id="addTask" class="addTask">Create Task</button>
+                <button id="cancelBtn" class="cancelTask">Cancel</button>
+            </div>
+        </form>
+    </dialog>
+
+
+</body>
+
+</html>
