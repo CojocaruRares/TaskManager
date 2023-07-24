@@ -95,6 +95,29 @@ label{
   background-color: #1b3a4d
 }
 
+.taskContainer{
+  display:flex;
+  flex-direction: column;
+  justify-content: space-around;
+  color: #fff7ef;
+  padding: 5px;
+  border: 2px solid #fff7ef;
+  padding: 10px;
+  margin: 10px;
+  border-radius: 15px;
+}
+
+.gridTasks{
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr ;
+ 
+}
+
+.taskDescription {
+  overflow-wrap: anywhere;
+}
+
+
 
 
 
