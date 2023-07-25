@@ -22,6 +22,12 @@ function addTask(task){
     let element = document.createElement('div');
     element.classList.add('taskContainer');
 
+    let iconContainer = document.createElement('div');
+    iconContainer.classList.add('iconContainer');
+
+    let titleContainer = document.createElement('div');
+    titleContainer.classList.add("titleContainer");
+
     let title = document.createElement('h2');
     title.textContent = task.title;
     title.classList.add('taskTitle');
@@ -31,7 +37,7 @@ function addTask(task){
     description.classList.add('taskDescription');
 
     let asignee = document.createElement('p');
-    asignee.textContent = task.asignee;
+    asignee.textContent = "assigned to " + task.asignee;
     asignee.classList.add('taskEmail');
 
     let trash = document.createElement('i');
@@ -42,11 +48,18 @@ function addTask(task){
     check.classList.add("fa-solid");
     check.classList.add("fa-check");
 
-    element.appendChild(check);
-    element.appendChild(trash);
-    element.appendChild(title);
+    iconContainer.appendChild(check);
+    iconContainer.appendChild(trash);
+    titleContainer.appendChild(title);
+    titleContainer.appendChild(iconContainer);
+    element.appendChild(titleContainer);
     element.appendChild(description);
     element.appendChild(asignee);
+
+    if(task.completed==true){
+        check.style.color = "#018749";
+        title.style.textDecoration = "line-through";
+    }
 
     TaskList.appendChild(element);
 }
@@ -65,7 +78,8 @@ AddTaskBtn.addEventListener("click", (event) => {
     const data = {
         title: title,
         description: description,
-        asignee: asignee
+        asignee: asignee,
+        completed: false
     };
     if (!isValidEmail(asignee)) {
         alert("Please enter a valid email address")
@@ -84,5 +98,21 @@ TaskList.addEventListener("click", (event) => {
         dataList.splice(taskIndex, 1);
         localStorage.setItem("data", JSON.stringify(dataList));
         container.remove();
+    }
+    if(target.classList.contains("fa-check")){
+        const container = target.closest(".taskContainer");
+        const taskIndex = Array.from(TaskList.children).indexOf(container);
+        const check = container.querySelector(".fa-check");
+        const title = container.querySelector(".taskTitle");
+        if (dataList[taskIndex].completed==true) {
+            check.style.color = "#fff7ef"; 
+            title.style.textDecoration = "none";
+            dataList[taskIndex].completed=false;
+          } else {
+            check.style.color = "#018749";
+            title.style.textDecoration = "line-through";
+            dataList[taskIndex].completed=true;
+          }
+        localStorage.setItem("data", JSON.stringify(dataList));
     }
 });

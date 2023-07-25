@@ -117,6 +117,35 @@ label{
   overflow-wrap: anywhere;
 }
 
+.taskEmail{
+  font-size: 12px;
+  font-style: italic;
+}
+
+.fa-trash, .fa-check{
+  margin:15px;
+  font-size: 22px;
+  transition-duration: 0.25s;
+}
+
+.fa-trash:hover{
+  color: #BA0021;
+}
+
+.fa-check:hover{
+  color: #018749;
+}
+
+.iconContainer{
+  display:flex;
+  justify-content: right;
+}
+
+.titleContainer{
+  display: flex;
+  justify-content: space-between;
+}
+
 
 
 
