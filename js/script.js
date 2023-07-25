@@ -3,6 +3,7 @@ const Dialog = document.getElementById("DialogTask");
 const CancelBtn = document.getElementById("cancelBtn");
 const AddTaskBtn = document.getElementById("addTask");
 const TaskList = document.getElementById("gridTasks");
+const checkBox = document.getElementById("checkBox");
 let dataList = JSON.parse(localStorage.getItem('data')) || [];
 
 CreateTaskBtn.addEventListener("click", () => {
@@ -114,5 +115,20 @@ TaskList.addEventListener("click", (event) => {
             dataList[taskIndex].completed=true;
           }
         localStorage.setItem("data", JSON.stringify(dataList));
+    }
+});
+
+checkBox.addEventListener("change", (event) => {
+    TaskList.innerHTML = "";
+    if(event.target.checked){
+        for (let i = 0; i < dataList.length; i++) {
+            addTask(dataList[i]);
+        }
+    }
+    else{
+        for (let i = 0; i < dataList.length; i++) {
+            if(dataList[i].completed==false)
+                addTask(dataList[i]);
+        }
     }
 });
