@@ -1,55 +1,108 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="css/style.css">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="css/style.css" />
     <script src="js/script.js" defer></script>
-    <script src="https://kit.fontawesome.com/8e24727f18.js" crossorigin="anonymous"></script>
+    <script
+      src="https://kit.fontawesome.com/8e24727f18.js"
+      crossorigin="anonymous"
+    ></script>
     <title>Task List</title>
-</head>
+  </head>
 
-<body>
-
-    <div class="hero-image">
-        <div class="flexBanner">
-            <div class="hero-text">
-                <h1>Task Manager</h1><br>
-            </div>
-            <button id="heroButton" class="heroButton">Create New Task</button>
+  <body>
+    <header class="hero-image">
+      <div class="flexBanner">
+        <div class="hero-text">
+          <h1>Task Manager</h1>
+          <br />
         </div>
-        <div class="checkbox-wrapper">
-            <label class="switch">
-                <input type="checkbox" id="checkBox" checked>
-                <span class="slider round"></span>
-            </label>
-            <p class="checkboxText">Show completed tasks</p>
-        </div>
-    </div>
-
+        <button id="heroButton" class="heroButton">Create New Task</button>
+      </div>
+      <div class="checkbox-wrapper">
+        <label class="switch">
+          <input type="checkbox" id="checkBox" checked />
+          <span class="slider round"></span>
+        </label>
+        <p class="checkboxText">Show completed tasks</p>
+      </div>
+    </header>
 
     <dialog id="DialogTask" class="DialogTask">
-        <form>
-            <label for="title">Title:</label><br>
-            <input type="text" id="title" class="dialogTitle" name="title" maxlength="50" pattern="[a-zA-Z0-9]+"
-                required><br><br>
-            <label for="description">Description:</label><br>
-            <textarea id="description" class="dialogTextarea" name="description" maxlength="250"
-                required></textarea><br><br>
-            <label for="asignee">Email:</label><br>
-            <input type="email" class="dialogEmail" id="asignee" name="asignee" required><br><br>
-            <div class="flexContainer">
-                <button id="addTask" class="addTask">Create Task</button>
-                <button id="cancelBtn" class="cancelTask">Cancel</button>
-            </div>
-        </form>
+      <form id="dialogForm">
+        <label for="title">Title:</label><br />
+        <input
+          type="text"
+          id="title"
+          class="dialogTitle"
+          name="title"
+          maxlength="50"
+          pattern="[a-zA-Z0-9]+"
+          required
+        /><br /><br />
+        <label for="description">Description:</label><br />
+        <textarea
+          id="description"
+          class="dialogTextarea"
+          name="description"
+          maxlength="250"
+          required
+        ></textarea
+        ><br /><br />
+        <label for="asignee">Email:</label><br />
+        <input
+          type="email"
+          class="dialogEmail"
+          id="asignee"
+          name="asignee"
+          required
+        /><br /><br />
+        <div class="flexContainer">
+          <button id="addTask" class="addTask">Create Task</button>
+          <button id="cancelBtn" class="cancelTask">Cancel</button>
+        </div>
+      </form>
+    </dialog>
+    
+    <dialog id="helpDialog" class="helpDialog">
+      <p><strong>Creating a New Task:</strong></p>
+      <p>
+        To create a new task, click the "Create New Task" button at the top of
+        the page. Fill in the title, description, and assignee's email. Click
+        the "Create Task" button to add the task.
+      </p>
+
+      <p><strong>Show Completed Tasks:</strong></p>
+      <p>
+        You can toggle the display of completed tasks using the checkbox at the
+        top. Checked means completed tasks will be shown, while unchecked means
+        only active tasks are displayed.
+      </p>
+
+      <p><strong>Managing Tasks:</strong></p>
+      <p>To mark a task as completed, simply click the checkbox next to it. Completed tasks will have a strikethrough effect.</p>
+      <p>To revert a task's completion status, click the checkbox again. The strikethrough effect will be removed, indicating the task is active again.</p>
+      <p>To delete a task, click on the trash icon next to the checkbox. The task will be deleted permanently.</p>
+
+      <p><strong>Getting Help:</strong></p>
+      <p>
+        If you have any questions or need assistance, feel free to click the
+        "Click for help !" button at the bottom of the page. This dialog will
+        provide you with useful information and tips.
+      </p>
+
+      <p>Thank you for using the Task Manager!</p><br><br>
+      <button class="cancelTask" id="exitHelp">Exit Dialog</button>
     </dialog>
 
-    <div class="gridTasks" id="gridTasks">
-    </div>
+    <div class="gridTasks" id="gridTasks"></div>
 
-
-</body>
-
+    <footer class="footer-class">
+      <p>&copy; Cojocaru Rares</p>
+      <div class="vertical-line"></div>
+      <button id="helpBtn">Click for help !</button>
+    </footer>
+  </body>
 </html>

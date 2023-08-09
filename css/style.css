@@ -8,6 +8,26 @@ body {
   background-color: #192734;
 }
 
+@media screen and (max-width: 680px) {
+  div.gridTasks{
+    display: grid;
+    grid-template-columns: 1fr;
+  }
+
+  dialog.DialogTask{
+    width: 100%;
+    padding: 20px;
+  }
+
+}
+
+@media screen and (max-width: 1280px) and (min-width: 680px) {
+  div.gridTasks{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
 .hero-image {
   background-image: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)), url("../images/bg_1.jpg");
   height: 50%;
@@ -20,9 +40,9 @@ body {
 
 .checkbox-wrapper {
   position: absolute;
-  bottom: 50px;
-  left: 80px;
-  display: flex;
+  bottom: 5%;
+  left: 3%;
+  display: flex; 
   align-items: center;
   flex-direction: row;
   color: #fff7ef;
@@ -124,7 +144,7 @@ label{
 
 .dialogTitle, .dialogTextarea, .dialogEmail{
   border: 2px solid black;
-  background-color: #1b3a4d ;
+  background-color: #1b3a4d;
   color:#fff7ef;
   font-size: 16px;
 }
@@ -189,7 +209,7 @@ label{
   font-style: italic;
 }
 
-.fa-trash, .fa-check{
+.fa-trash, .fa-check, .fa-file-pen{
   margin:15px;
   font-size: 22px;
   transition-duration: 0.25s;
@@ -199,18 +219,60 @@ label{
   color: #BA0021;
 }
 
+.fa-file-pen:hover{
+  color:rgb(39, 87, 182);
+}
+
 .fa-check:hover{
   color: #018749;
 }
 
 .iconContainer{
   display:flex;
-  justify-content: right;
 }
 
 .titleContainer{
   display: flex;
   justify-content: space-between;
+}
+
+.footer-class{
+  display: flex;
+  justify-content: center;
+  margin-top: auto;
+  color: #fff7ef;
+  padding-top: 40px;
+  padding-bottom: 20px;
+}
+
+.vertical-line {
+  padding: 10px;
+  margin: 12px;
+  margin-left: 30px;
+  border-left: 1px solid #fff7ef;;
+  height: 6px;
+}
+
+footer.footer-class button{
+  border: none;
+  background-color: inherit;
+  color: #fff7ef;
+  cursor: pointer;
+  font-size: 16px;
+  padding: 0;
+}
+
+.helpDialog{
+  width: 600px;
+  height: 700px;
+  padding: 60px;
+  background-color: #192734;
+  border-radius: 5px;
+  box-shadow: 0 4px 5px rgba(0, 0, 0, 0.1);
+}
+
+.helpDialog p{
+  color: #fff7ef;
 }
 
 
