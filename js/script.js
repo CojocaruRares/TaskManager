@@ -24,7 +24,7 @@ cancelBtn.addEventListener("click", () => {
 });
 
 function isValidEmail(email) {
-  const pattern = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
+  const pattern = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)+$/;
   return pattern.test(email);
 }
 

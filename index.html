@@ -9,7 +9,7 @@
       src="https://kit.fontawesome.com/8e24727f18.js"
       crossorigin="anonymous"
     ></script>
-    <title>Task List</title>
+    <title>Task Manager</title>
   </head>
 
   <body>
@@ -65,7 +65,7 @@
         </div>
       </form>
     </dialog>
-    
+
     <dialog id="helpDialog" class="helpDialog">
       <p><strong>Creating a New Task:</strong></p>
       <p>
@@ -82,18 +82,33 @@
       </p>
 
       <p><strong>Managing Tasks:</strong></p>
-      <p>To mark a task as completed, simply click the checkbox next to it. Completed tasks will have a strikethrough effect.</p>
-      <p>To revert a task's completion status, click the checkbox again. The strikethrough effect will be removed, indicating the task is active again.</p>
-      <p>To delete a task, click on the trash icon next to the checkbox. The task will be deleted permanently.</p>
+      <p>
+        To mark a task as completed, simply click the checkbox next to it.
+        Completed tasks will have a strikethrough effect.
+      </p>
+      <p>
+        To revert a task's completion status, click the checkbox again. The
+        strikethrough effect will be removed, indicating the task is active
+        again.
+      </p>
+      <p>
+        To edit a task, click on the edit icon. A dialog will pop up. Complete
+        only the fields you want to modify.
+      </p>
+      <p>
+        To delete a task, click on the trash icon next to the checkbox. The task
+        will be deleted permanently.
+      </p>
 
       <p><strong>Getting Help:</strong></p>
       <p>
         If you have any questions or need assistance, feel free to click the
-        "Click for help !" button at the bottom of the page. This dialog will
+        "Click for help" button at the bottom of the page. This dialog will
         provide you with useful information and tips.
       </p>
 
-      <p>Thank you for using the Task Manager!</p><br><br>
+      <p>Thank you for using the Task Manager!</p>
+      <br /><br />
       <button class="cancelTask" id="exitHelp">Exit Dialog</button>
     </dialog>
 
@@ -102,7 +117,7 @@
     <footer class="footer-class">
       <p>&copy; Cojocaru Rares</p>
       <div class="vertical-line"></div>
-      <button id="helpBtn">Click for help !</button>
+      <button id="helpBtn">Click for help</button>
     </footer>
   </body>
 </html>

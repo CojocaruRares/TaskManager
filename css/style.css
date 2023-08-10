@@ -275,6 +275,11 @@ footer.footer-class button{
   color: #fff7ef;
 }
 
+input:invalid, textarea:invalid{
+  border: 1px solid red;
+}
+
+
 
 
 
