@@ -21,6 +21,8 @@ cancelBtn.addEventListener("click", () => {
   const description = document.getElementById("description");
   const asignee = document.getElementById("asignee");
   document.getElementById("dialogForm").reset();
+  editFlag = false;
+  addTaskBtn.innerHTML = "Add Task";
 });
 
 function isValidEmail(email) {
