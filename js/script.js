@@ -120,7 +120,7 @@ addTaskBtn.addEventListener("click", (event) => {
         alert("Please enter a valid email address");
         return;
       }
-      editAsignee.textContent = asignee;
+      editAsignee.textContent = "assigned to " + asignee;
       dataList[taskIndex].asignee = asignee;
     }
     localStorage.setItem("data", JSON.stringify(dataList));
